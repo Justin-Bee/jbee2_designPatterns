@@ -12,5 +12,14 @@ package main.java;
  *
  */
 public class Beehive {
+    
+    public Beehive() {
+      
+    }
+    
+    
+    public String print() { //TODO remove
+        return "beehive";
+    }
 
 }
