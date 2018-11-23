@@ -46,9 +46,17 @@ public class Apiary {
      * addBeehive - adds a beehive to the array of beehives.
      * @param beehive - Beehive
      */
-    protected void addBeehive(Beehive beehive) {
+    public void addBeehive(Beehive beehive) {
         this.beehive.add(beehive);
         this.hiveCounter++;
+    }
+    
+    /**
+     * getNumHives returns number of hives in apiary.
+     * @return beehive.size() - returns size of list
+     */
+    public int getNumHives() {
+        return beehive.size();
     }
 
     

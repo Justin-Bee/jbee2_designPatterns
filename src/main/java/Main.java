@@ -27,7 +27,7 @@ public class Main {
        
         Apiary ap = Apiary.getInstance();
         
-        Beehive beehive = new Beehive();
+       // Beehive beehive = new Beehive();
         ap.addBeehive(beehive);
         ap.returnBeehive();
         }
