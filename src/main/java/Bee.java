@@ -1,7 +1,7 @@
 package main.java;
 
 /**
- * Bee class - made using decorator
+ * Bee class - made using decorator.
  * should be able to battle other bees
  * each species has a special attribute
  * 

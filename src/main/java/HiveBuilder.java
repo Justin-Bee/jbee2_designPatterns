@@ -8,6 +8,14 @@ package main.java;
  */
 public class HiveBuilder {
     
+    /**
+     * BeeHive builder.
+     * takes the parameters input and builds a new hive. 
+     * @param bType - for the type of bees for the hive created
+     * @param ticks - for the ticks in the hive
+     * @param food - for the initial quantity of food for the hive
+     * @return Beehive - a new beehive built with the parameters
+     */
     public Beehive builder(String bType, int ticks, int food) {
         return new Beehive(bType, ticks, food);
     }
