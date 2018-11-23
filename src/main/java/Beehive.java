@@ -69,6 +69,17 @@ public class Beehive {
         room++;
         ticks = 100;
     }
+    
+    /**
+     * harvestFood takes the bees that are sent into it to add to the 
+     * food supply based on the value of their harvest ability.
+     * @param bee - Bee arraylist
+     */
+    public void harvestFood (ArrayList<Bee> bee) {
+        for (int i =0; i < bee.size(); i++) {
+            food = food + bee.get(i).harvest;
+        }
+    }
 
 
     public String print() { //TODO remove
