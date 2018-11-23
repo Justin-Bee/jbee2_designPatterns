@@ -46,8 +46,12 @@ public class Apiary {
      * addBeehive - adds a beehive to the array of beehives.
      * @param beehive - Beehive
      */
-    public void addBeehive(Beehive beehive) {
-        this.beehive.add(beehive);
+    public void addBeehive() {
+        HiveBuilder hb = new HiveBuilder();
+        hb.setBeeType("warrior");
+        hb.setFood(200);
+        BeeHive bh = hb.builder();
+        this.beehive.add(bh);
         this.hiveCounter++;
     }
     
