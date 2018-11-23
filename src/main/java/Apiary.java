@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.ArrayList;
+
 /**
  * Apiary class - only one instance of apiary is allowed to exist.
  * Singleton class
@@ -10,12 +12,12 @@ package main.java;
  *
  */
 public class Apiary {
+    ////create an array list of beehives
+    private ArrayList<Beehive> beehive = new ArrayList<Beehive>(); 
+    private int hiveCounter = 0; //count number of hives in list
 
-    private Beehive[] beehive = new Beehive [1000];
-    private int hiveCounter = 0;
-
-
-    private static Apiary apiary;
+   
+    private static Apiary apiary;  //for the apiary instance
 
     /**
      * Apiary - constructor.
@@ -27,6 +29,7 @@ public class Apiary {
 
     /**
      * getInstance - returns the only instance of the apiary.
+     * if another is attempted to be created prints message
      * @return apiary - the apiary instance
      */
     public static Apiary getInstance() {
@@ -44,13 +47,13 @@ public class Apiary {
      * @param beehive - Beehive
      */
     protected void addBeehive(Beehive beehive) {
-        this.beehive[hiveCounter] = beehive;
+        this.beehive.add(beehive);
         this.hiveCounter++;
     }
 
     
-    protected void returnBeehive() {
-        System.out.println(beehive[0].print());
+    protected void returnBeehive() {  //TODO remove
+        System.out.println(this.beehive.get(0).print());
     }
 
 }

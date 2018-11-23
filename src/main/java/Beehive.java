@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.ArrayList;
+
 /**
  * Beehive class - builder pattern.
  * comprised of a network of rooms
@@ -13,13 +15,26 @@ package main.java;
  */
 public class Beehive {
     
-    public Beehive() {
+    ArrayList<String> beeType = new ArrayList<String>();
+    ArrayList<Bee> bees = new ArrayList<Bee>();
+    int ticks;
+    int food;
+    
+    
+    
+    public Beehive(String bType, int ticks, int food) {
       
     }
     
+    public void spawnBee() {
+        
+    }
+
     
     public String print() { //TODO remove
         return "beehive";
     }
 
+
+    
 }
