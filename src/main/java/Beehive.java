@@ -23,17 +23,18 @@ public class Beehive {
     
     
     public Beehive(String bType, int ticks, int food) {
-      
+     
     }
     
     public void spawnBee() {
         if(bees.size()==0) {
-            bees.add(Bee("queen");
+            bees.add(new queenBee());
         }
-        bees.add(Bee())
+       
     }
 
-    
+  
+
     public String print() { //TODO remove
         return "beehive";
     }
