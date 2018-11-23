@@ -17,7 +17,7 @@ public class Beehive {
 
     ArrayList<String> beeType = new ArrayList<String>();
     ArrayList<Bee> bees = new ArrayList<Bee>();
-    private int ticks;
+    private int ticks = 100;
     private int food;
     private int room;
 
@@ -27,9 +27,8 @@ public class Beehive {
      * @param ticks - int for the ticks
      * @param food - food for the initial quantity of food
      */
-    public Beehive(String bType, int ticks, int food) {
+    public Beehive(String bType, int food) {
         beeType.add(bType);
-        this.ticks = ticks;
         this.food = food;
         this.room = 1; //set the initial number of rooms to 1
 
@@ -54,6 +53,22 @@ public class Beehive {
 
     }
 
+    /**
+     * addRoom - method to build new rooms for the hive. 
+     * @param bee - Arraylist of the bees to build the room
+     */
+    public void addRoom(ArrayList<Bee> bee) {
+        while (ticks != 0) {
+            for (int i =0; i < bee.size(); i++) {
+                //decrement ticks by the value of build attribute of bee
+                ticks = ticks - bee.get(i).build;
+                //building room takes away from bees hunger
+                bee.get(i).hunger--;
+            }
+        }
+        room++;
+        ticks = 100;
+    }
 
 
     public String print() { //TODO remove

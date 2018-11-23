@@ -16,8 +16,8 @@ public class HiveBuilder {
      * @param food - for the initial quantity of food for the hive
      * @return Beehive - a new beehive built with the parameters
      */
-    public Beehive builder(String bType, int ticks, int food) {
-        return new Beehive(bType, ticks, food);
+    public Beehive builder(String bType, int food) {
+        return new Beehive(bType, food);
     }
 
 }

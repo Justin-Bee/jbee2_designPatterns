@@ -15,25 +15,25 @@ public class Main {
      * @param args - String args
      */
     public static void main(String[] args) {
-        
-      //  String input = "";
-     //  Scanner scan = new Scanner(System.in);
-        
-       // while(input != "Q") {
-      //  System.out.println("Enter commands Q to quit");
-      //  input = scan.nextLine();
-        
-        
-       
+
+        //  String input = "";
+        //  Scanner scan = new Scanner(System.in);
+
+        // while(input != "Q") {
+        //  System.out.println("Enter commands Q to quit");
+        //  input = scan.nextLine();
+
+
+
         Apiary ap = Apiary.getInstance();
-        
-       // Beehive beehive = new Beehive();
-        ap.addBeehive(beehive);
-        ap.returnBeehive();
-        }
-    
-    
-    
-   // }
+
+        // Beehive beehive = new Beehive();
+        //   ap.addBeehive(beehive);
+        // ap.returnBeehive();
+    }
+
+
+
+    // }
 
 }
