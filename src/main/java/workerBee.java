@@ -18,6 +18,7 @@ public class workerBee extends Bee{
         this.hunger = 50;
         this.harvest = 1;
         this.build = 5;
+        this.type = "worker";
     }
 
 }
