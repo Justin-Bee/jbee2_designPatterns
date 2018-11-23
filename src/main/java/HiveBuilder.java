@@ -8,8 +8,8 @@ package main.java;
  */
 public class HiveBuilder {
     
-    public Beehive builder() {
-        return new Beehive();
+    public Beehive builder(String bType, int ticks, int food) {
+        return new Beehive(bType, ticks, food);
     }
 
 }

@@ -23,7 +23,11 @@ public class Beehive {
     
     
     public Beehive(String bType, int ticks, int food) {
-     
+       beeType.add(bType);
+       this.ticks = ticks;
+       this.food = food;
+       this.room = 1;
+       
     }
     
     public void spawnBee() {
