@@ -19,7 +19,7 @@ public class Beehive {
     ArrayList<Bee> bees = new ArrayList<Bee>();
     int ticks;
     int food;
-    
+    int room;
     
     
     public Beehive(String bType, int ticks, int food) {
@@ -27,7 +27,10 @@ public class Beehive {
     }
     
     public void spawnBee() {
-        
+        if(bees.size()==0) {
+            bees.add(Bee("queen");
+        }
+        bees.add(Bee())
     }
 
     

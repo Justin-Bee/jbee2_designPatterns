@@ -11,34 +11,26 @@ package main.java;
  */
 public class Bee {
     
-    private String type;
-    private int life;
-    private int strength;
-    private int hunger;
+    protected String type;  //to hold initial type of bee
+    protected int life;    //for the life (HP) of the bee
+    protected int strength;  //for the fighting strength of bee
+    protected int hunger;  //hunger or rest need of bee
+    protected int harvest;  //harvest ability of bee
+    protected int build;   //build ability of bee
     
-    public Bee(String type) {
-        this.type = type;
-        if (type.equals("worker")) {
-            this.life = 50;
-            this.strength = 1;
-            this.hunger = 50;
-        } else if (type.equals("harvester")) {
-            this.life = 50;
-            this.strength = 1;
-            this.hunger = 100;
-        } else if (type.equals("warrior")) {
-            this.life = 100;
-            this.strength = 3;
-            this.hunger = 25;
-        } else if (type.equals("queen")) {
-            this.life = 500;
-            this.strength = 5;
-            this.hunger = 200;         
-        }
+    public Bee() {
+        this.life = 50;
+        this.strength = 1;
+        this.hunger = 50;
+        this.harvest = 1;
+        this.build = 1;
     }
     
     public void eat () {
         this.hunger = this.hunger + 50;
     }
+    
+    
 
 }
+
