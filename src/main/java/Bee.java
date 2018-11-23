@@ -17,18 +17,44 @@ public class Bee {
     protected int hunger;  //hunger or rest need of bee
     protected int harvest;  //harvest ability of bee
     protected int build;   //build ability of bee
+    protected boolean alive;
     
+    /**
+     * default constructor for the bee.
+     */
     public Bee() {
         this.life = 50;
         this.strength = 1;
         this.hunger = 50;
         this.harvest = 1;
         this.build = 1;
+        this.alive = true;
     }
     
-    public void eat () {
+    /**
+     * eat - when bee rests gains more hunger points
+     */
+    public void eat() {
         this.hunger = this.hunger + 50;
     }
+    
+    /**
+     * fight - method where 2 bees fight loser of fight gets 
+     * alive set to false.
+     * @param bee - Bee for the other bee which its fighting
+     */
+    public void fight(Bee bee) {
+        while (this.life != 0 || bee.life !=0) {
+            bee.life = bee.life - this.strength;
+            this.life = this.life - bee.strength;
+        }
+        if (this.life == 0) {
+            this.alive = false;
+        } else {
+            bee.alive = false;
+        }
+    }
+    
     
     
 

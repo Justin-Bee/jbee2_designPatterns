@@ -39,7 +39,7 @@ public class Beehive {
      * if no bees are currently in the hive spawn a queen bee.
      */
     public void spawnBee() {
-        if (bees.size()==0) {
+        if (bees.size() == 0) {
             bees.add(new queenBee());
         } else {
             if (beeType.get(0).equals("warrior")) {
