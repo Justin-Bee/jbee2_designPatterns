@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * has only one species of bee
  * 
  * @author jbee2 - Justin Bee
- * @version 11/22/18
+ * @version 11/23/18
  *
  */
 public class Beehive {
@@ -20,6 +20,7 @@ public class Beehive {
     private int ticks = 100;
     private int food;
     private int room;
+    private boolean ableToRest;
 
     /**
      * default constructor of the Beehive.
@@ -31,7 +32,7 @@ public class Beehive {
         beeType.add(bType);
         this.food = food;
         this.room = 1; //set the initial number of rooms to 1
-
+        spawnBee();
     }
 
     /**
@@ -78,12 +79,42 @@ public class Beehive {
     public void harvestFood (ArrayList<Bee> bee) {
         for (int i =0; i < bee.size(); i++) {
             food = food + bee.get(i).harvest;
+            bee.get(i).hunger--;
         }
     }
 
-
-    public String print() { //TODO remove
-        return "beehive";
+    /**
+     * monitorHunger watches the hunger levels of the bees.
+     * calls restBee for bees that need to rest.
+     * @param bee -ArrayList of bees
+     */
+    public void monitorHunger(ArrayList<Bee> bee) {
+        while (bee.size() != 0) {
+            for ( int i =0; i < bee.size(); i ++) {
+                if (bee.get(i).hunger <= 5) {
+                    restBee(bee.get(i));
+                }
+            }
+        }
+    }
+    
+    /**
+     * restBee calls the eat function in the bee resting.
+     * also decrements the food quantity of hive.
+     * @param bee
+     */
+    public void restBee(Bee bee) {
+        bee.eat();
+        this.food = this.food--;
+    }
+    
+    /**
+     * toString returns a summary of the hive.
+     */
+    public String toString() { 
+        return "Beehive type of bee: " + beeType.get(0) + " number of bees in hive: " +
+                bees.size() + " amount of food in hive: " + this.food + " number of rooms: " + 
+                this.room + "\n";
     }
 
 
