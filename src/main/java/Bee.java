@@ -53,6 +53,15 @@ public class Bee {
         } else {
             bee.alive = false;
         }
+        if (this.alive == true) {
+            this.strength = this.strength + bee.strength;
+            this.harvest = this.harvest + bee.harvest;
+            this.build = this.build + bee.build;
+        } else {
+            bee.strength = bee.strength + this.strength;
+            bee.harvest = bee.harvest + this.harvest;
+            bee.build = bee.build + this.build;
+        }
     }
     
     
