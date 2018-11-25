@@ -32,6 +32,8 @@ public class Simulation {
         //adds a room to the hive
         ap.returnBeehive(0).addRoom(ap.returnBeehive(0).getBees());
         System.out.println(ap.returnBeehive(0).toString());
+        
+        
     }
 
 }
