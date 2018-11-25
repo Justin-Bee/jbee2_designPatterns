@@ -8,10 +8,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import main.java.Apiary;
-import main.java.Beehive;
+import main.java.HiveBuilder;
 
-public class ApiaryTest {
+public class HiveBuilderTest {
 
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
@@ -30,11 +29,10 @@ public class ApiaryTest {
     }
 
     @Test
-    public void numOfHives() {
-        Apiary ap = Apiary.getInstance();
-        Beehive bh = new Beehive(null, 0);
-        ap.addBeehive("warrior", 100);
-        assertEquals(ap.getNumHives(),1);
+    public void defaultConTest() {
+        HiveBuilder hb = new HiveBuilder();
+        assertEquals(hb.getBeeType(), "worker");
+        assertEquals(hb.getFood(), 100);
     }
 
 }

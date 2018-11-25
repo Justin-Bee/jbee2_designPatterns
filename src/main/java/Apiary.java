@@ -46,11 +46,11 @@ public class Apiary {
      * addBeehive - adds a beehive to the array of beehives.
      * @param beehive - Beehive
      */
-    public void addBeehive() {
+    public void addBeehive(String type, int food) {
         HiveBuilder hb = new HiveBuilder();
-        hb.setBeeType("warrior");
-        hb.setFood(200);
-        BeeHive bh = hb.builder();
+        hb.setBeeType(type);
+        hb.setFood(food);
+        Beehive bh = hb.builder();
         this.beehive.add(bh);
         this.hiveCounter++;
     }
@@ -65,7 +65,7 @@ public class Apiary {
 
     
     protected void returnBeehive() {  //TODO remove
-        System.out.println(this.beehive.get(0).print());
+        System.out.println(this.beehive.get(0).toString());
     }
 
 }
