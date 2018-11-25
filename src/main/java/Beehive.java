@@ -25,7 +25,7 @@ public class Beehive {
     
     /**
      * constructor of the Beehive.
-     * @param bType - String for the type of bees
+     * @param beeType - String for the type of bees
      * @param food - food for the initial quantity of food
      */
     public Beehive(String beeType, int food) {
@@ -33,6 +33,7 @@ public class Beehive {
         this.food = food;
         this.room = 1; //set the initial number of rooms to 1
         spawnBee();
+        monitorHunger(bees);
     }
 
     /**

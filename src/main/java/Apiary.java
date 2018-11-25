@@ -41,10 +41,11 @@ public class Apiary {
         return apiary;
     }
 
-    //methods should be protected
+   
     /**
      * addBeehive - adds a beehive to the array of beehives.
-     * @param beehive - Beehive
+     * @param type - String
+     * @param food - int
      */
     public void addBeehive(String type, int food) {
         HiveBuilder hb = new HiveBuilder();
@@ -63,9 +64,13 @@ public class Apiary {
         return beehive.size();
     }
 
-    
-    protected void returnBeehive() {  //TODO remove
-        System.out.println(this.beehive.get(0).toString());
+    /**
+     * Returns the beehive at given index
+     * @param x - int 
+     * @return beehive - returs the beehive
+     */
+    protected Beehive returnBeehive(int x) {  
+       return beehive.get(x);
     }
 
 }

@@ -26,10 +26,10 @@ public class Main {
 
 
         Apiary ap = Apiary.getInstance();
-
-        // Beehive beehive = new Beehive();
-        //   ap.addBeehive(beehive);
-        // ap.returnBeehive();
+        ap.addBeehive("worker", 100);
+        ap.returnBeehive(0).spawnBee();
+        ap.returnBeehive(0).harvestFood(ap.returnBeehive(0).getBees());
+        ap.returnBeehive(0).toString();
     }
 
 
