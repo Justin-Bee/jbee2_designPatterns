@@ -22,14 +22,14 @@ public class Beehive {
     private int room;
     private boolean ableToRest;
 
+    
     /**
-     * default constructor of the Beehive.
+     * constructor of the Beehive.
      * @param bType - String for the type of bees
-     * @param ticks - int for the ticks
      * @param food - food for the initial quantity of food
      */
-    public Beehive(String bType, int food) {
-        beeType.add(bType);
+    public Beehive(String beeType, int food) {
+        this.beeType.add(beeType);
         this.food = food;
         this.room = 1; //set the initial number of rooms to 1
         spawnBee();
@@ -60,7 +60,7 @@ public class Beehive {
      */
     public void addRoom(ArrayList<Bee> bee) {
         while (ticks != 0) {
-            for (int i =0; i < bee.size(); i++) {
+            for (int i = 0; i < bee.size(); i++) {
                 //decrement ticks by the value of build attribute of bee
                 ticks = ticks - bee.get(i).build;
                 //building room takes away from bees hunger
@@ -76,11 +76,19 @@ public class Beehive {
      * food supply based on the value of their harvest ability.
      * @param bee - Bee arraylist
      */
-    public void harvestFood (ArrayList<Bee> bee) {
-        for (int i =0; i < bee.size(); i++) {
+    public void harvestFood(ArrayList<Bee> bee) {
+        for (int i = 0; i < bee.size(); i++) {
             food = food + bee.get(i).harvest;
             bee.get(i).hunger--;
         }
+    }
+    
+    /**
+     * getFood - returns the amount of food for the hive.
+     * @return food - int food for the hive
+     */
+    public int getFood() {
+        return food;
     }
 
     /**
@@ -90,7 +98,7 @@ public class Beehive {
      */
     public void monitorHunger(ArrayList<Bee> bee) {
         while (bee.size() != 0) {
-            for ( int i =0; i < bee.size(); i ++) {
+            for (int i = 0; i < bee.size(); i ++) {
                 if (bee.get(i).hunger <= 5) {
                     restBee(bee.get(i));
                 }
@@ -101,7 +109,7 @@ public class Beehive {
     /**
      * restBee calls the eat function in the bee resting.
      * also decrements the food quantity of hive.
-     * @param bee
+     * @param bee - Bee
      */
     public void restBee(Bee bee) {
         bee.eat();
@@ -109,12 +117,36 @@ public class Beehive {
     }
     
     /**
+     * getNumBees - gets the number of bees in the hive.
+     * @return bees.size() - returns the number of bees in the hive
+     */
+    public int getNumBees() {
+        return bees.size();
+    }
+    
+    /**
+     * getBees - returns the array list of bees in the hive.
+     * @return this.bees - returns the array list of bees 
+     */
+    public ArrayList<Bee> getBees() {
+        return this.bees;
+    }
+    
+    /**
+     * getRooms - returns the number of rooms in the hive.
+     * @return room - int value of the number of rooms
+     */
+    public int getRooms() {
+        return room;
+    }
+    
+    /**
      * toString returns a summary of the hive.
      */
     public String toString() { 
-        return "Beehive type of bee: " + beeType.get(0) + " number of bees in hive: " +
-                bees.size() + " amount of food in hive: " + this.food + " number of rooms: " + 
-                this.room + "\n";
+        return "Beehive type of bee: " + beeType.get(0) + " number of bees in hive: "
+                + bees.size() + " amount of food in hive: " + this.food + " number of rooms: "
+                + this.room + "\n";
     }
 
 
