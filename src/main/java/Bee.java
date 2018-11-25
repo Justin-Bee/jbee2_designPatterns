@@ -17,7 +17,7 @@ public class Bee {
     protected int hunger;  //hunger or rest need of bee
     protected int harvest;  //harvest ability of bee
     protected int build;   //build ability of bee
-    protected boolean alive;
+    protected boolean alive; //to set if the bee is alive
     
     /**
      * default constructor for the bee.
@@ -32,10 +32,59 @@ public class Bee {
     }
     
     /**
-     * eat - when bee rests gains more hunger points
+     * eat - when bee rests gains more hunger points.
      */
     public void eat() {
         this.hunger = this.hunger + 50;
+    }
+    
+    /**
+     * getLife - gets the life of the bee.
+     * @return this.life - life of bee
+     */
+    public int getLife() {
+        return this.life;
+    }
+    
+    /**
+     * getStrength - gets the strength of the bee.
+     * @return this.strength - int strength of bee
+     */
+    public int getStrength() {
+        return this.strength;
+    }
+    
+    /**
+     * getHunger - returns the hunger of the bee.
+     * @return this.hunger - int hunger of bee
+     */
+    public int getHunger() {
+        return this.hunger;
+    }
+    
+    /**
+     * getHarvest - returns the harvest ability.
+     * @return this.harvest - int harvest ability
+     */
+    public int getHarvest() {
+        return this.harvest;
+    }
+    
+    /**
+     * getBuild - returns the build ability of bee.
+     * @return this.build - int build ability
+     */
+    public int getBuild() {
+        return this.build;
+    }
+    
+    /**
+     * getAlive - returns boolean value true if alive
+     * false for dead.
+     * @return this.alive - boolean
+     */
+    public boolean getAlive() {
+        return this.alive;
     }
     
     /**
@@ -44,7 +93,7 @@ public class Bee {
      * @param bee - Bee for the other bee which its fighting
      */
     public void fight(Bee bee) {
-        while (this.life != 0 || bee.life !=0) {
+        while (this.life != 0 || bee.life != 0) {
             bee.life = bee.life - this.strength;
             this.life = this.life - bee.strength;
         }
