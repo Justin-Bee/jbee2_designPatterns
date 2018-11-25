@@ -49,8 +49,6 @@ public class Apiary {
         HiveBuilder hb = new HiveBuilder();
         hb.setBeeType(type);
         hb.setFood(food);
-        Beehive bh = new Beehive();
-        bh = hb.builder();
         this.beehive.add(hb.builder());
         this.hiveCounter++;
     }

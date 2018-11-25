@@ -7,12 +7,12 @@ package main.java;
  * @version 1122/2018
  *
  */
-public class queenBee extends Bee{
+public class QueenBee extends Bee {
 
     /**
      * default constructor for the queen bee.
      */
-    public queenBee() {
+    public QueenBee() {
         this.life = 200;
         this.strength = 5;
         this.hunger = 200;

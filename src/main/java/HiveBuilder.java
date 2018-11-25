@@ -17,7 +17,7 @@ public class HiveBuilder {
      * and the default food to 100
      */
     public HiveBuilder() {
-        this.beeType = "worker";
+        this.beeType = "harvester";
         this.food = 100;
     }
     

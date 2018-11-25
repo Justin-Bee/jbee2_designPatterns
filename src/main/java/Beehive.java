@@ -20,7 +20,6 @@ public class Beehive {
     private int ticks = 100;
     private int food;
     private int room;
-    private boolean ableToRest;
 
     
     /**
@@ -46,14 +45,14 @@ public class Beehive {
      */
     public void spawnBee() {
         if (bees.size() == 0) {
-            bees.add(new queenBee());
+            bees.add(new QueenBee());
         } else {
             if (beeType.equals("warrior")) {
-                bees.add(new warriorBee());
+                bees.add(new WarriorBee());
             } else if (beeType.equals("worker")) {
-                bees.add(new workerBee());
+                bees.add(new WorkerBee());
             } else if (beeType.equals("harvester")) {
-                bees.add(new harvesterBee());
+                bees.add(new HarvesterBee());
             }
         }
         
@@ -121,7 +120,7 @@ public class Beehive {
      */
     public void restBee(Bee bee) {
         bee.eat();
-        this.food = this.food--;
+        this.food--;
     }
     
     /**

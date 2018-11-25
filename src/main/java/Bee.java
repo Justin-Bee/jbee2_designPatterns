@@ -11,7 +11,7 @@ package main.java;
  */
 public class Bee {
     
-    protected String type;  //to hold initial type of bee
+    public String type;  //to hold initial type of bee
     protected int life;    //for the life (HP) of the bee
     protected int strength;  //for the fighting strength of bee
     protected int hunger;  //hunger or rest need of bee
@@ -88,6 +88,21 @@ public class Bee {
     }
     
     /**
+     * setDead - sets the alive variable to false.
+     */
+    public void setDead() {
+        this.alive = false;
+    }
+    
+    /**
+     * getType - gets the type of the bee.
+     * @return
+     */
+    public String getType() {
+        return this.type;
+    }
+    
+    /**
      * fight - method where 2 bees fight loser of fight gets 
      * alive set to false.
      * @param bee - Bee for the other bee which its fighting
@@ -97,11 +112,12 @@ public class Bee {
             bee.life = bee.life - this.strength;
             this.life = this.life - bee.strength;
         }
-        if (this.life == 0) {
-            this.alive = false;
+        if (bee.getLife() == 0) {
+            bee.setDead();
         } else {
-            bee.alive = false;
+            this.setDead();
         }
+        
         if (this.alive == true) {
             this.strength = this.strength + bee.strength;
             this.harvest = this.harvest + bee.harvest;
