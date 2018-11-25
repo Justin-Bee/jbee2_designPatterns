@@ -1,6 +1,5 @@
 package main.java;
 
-import java.util.Scanner;
 
 /**
  * Main class instantiates the other classes of the system.
@@ -16,20 +15,22 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        //  String input = "";
-        //  Scanner scan = new Scanner(System.in);
-
-        // while(input != "Q") {
-        //  System.out.println("Enter commands Q to quit");
-        //  input = scan.nextLine();
-
-
-
-        Apiary ap = Apiary.getInstance();
-        ap.addBeehive("worker", 100);
+        Apiary ap = Apiary.getInstance(); //for the singleton apiary instance
+        //add a beehive to the apiary with params for builder class
+        ap.addBeehive("warrior", 300);  
+        //spawns the appropriate bee based on the type of hive
+        ap.returnBeehive(0).spawnBee();
+        //have the list of bees harvest food
+        ap.returnBeehive(0).harvestFood(ap.returnBeehive(0).getBees());  
+        //returns info about the selected beehive
+        System.out.println(ap.returnBeehive(0).toString());
+        ap.returnBeehive(0).spawnBee();
         ap.returnBeehive(0).spawnBee();
         ap.returnBeehive(0).harvestFood(ap.returnBeehive(0).getBees());
-        ap.returnBeehive(0).toString();
+        System.out.println(ap.returnBeehive(0).toString());
+        //adds a room to the hive
+        ap.returnBeehive(0).addRoom(ap.returnBeehive(0).getBees());
+        System.out.println(ap.returnBeehive(0).toString());
     }
 
 

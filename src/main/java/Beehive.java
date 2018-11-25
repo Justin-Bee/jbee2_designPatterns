@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class Beehive {
 
-    ArrayList<String> beeType = new ArrayList<String>();
+    String beeType;
     ArrayList<Bee> bees = new ArrayList<Bee>();
     private int ticks = 100;
     private int food;
@@ -29,11 +29,15 @@ public class Beehive {
      * @param food - food for the initial quantity of food
      */
     public Beehive(String beeType, int food) {
-        this.beeType.add(beeType);
+        this.beeType = (beeType);
         this.food = food;
         this.room = 1; //set the initial number of rooms to 1
         spawnBee();
-        monitorHunger(bees);
+        
+    }
+
+    public Beehive() {
+        
     }
 
     /**
@@ -44,15 +48,15 @@ public class Beehive {
         if (bees.size() == 0) {
             bees.add(new queenBee());
         } else {
-            if (beeType.get(0).equals("warrior")) {
+            if (beeType.equals("warrior")) {
                 bees.add(new warriorBee());
-            } else if (beeType.get(0).equals("worker")) {
+            } else if (beeType.equals("worker")) {
                 bees.add(new workerBee());
-            } else if (beeType.get(0).equals("harvester")) {
+            } else if (beeType.equals("harvester")) {
                 bees.add(new harvesterBee());
             }
         }
-
+        
     }
 
     /**
@@ -66,12 +70,15 @@ public class Beehive {
                 ticks = ticks - bee.get(i).build;
                 //building room takes away from bees hunger
                 bee.get(i).hunger--;
+
             }
         }
+        //call monitor hunger to check if any bees need rest
+        monitorHunger(bee); 
         room++;
         ticks = 100;
     }
-    
+
     /**
      * harvestFood takes the bees that are sent into it to add to the 
      * food supply based on the value of their harvest ability.
@@ -80,8 +87,8 @@ public class Beehive {
     public void harvestFood(ArrayList<Bee> bee) {
         for (int i = 0; i < bee.size(); i++) {
             food = food + bee.get(i).harvest;
-            bee.get(i).hunger--;
         }
+        
     }
     
     /**
@@ -98,13 +105,13 @@ public class Beehive {
      * @param bee -ArrayList of bees
      */
     public void monitorHunger(ArrayList<Bee> bee) {
-        while (bee.size() != 0) {
-            for (int i = 0; i < bee.size(); i ++) {
-                if (bee.get(i).hunger <= 5) {
-                    restBee(bee.get(i));
-                }
+
+        for (int i = 0; i < bee.size(); i++) {
+            if (bee.get(i).hunger <= 5) {
+                restBee(bee.get(i));
             }
         }
+
     }
     
     /**
@@ -145,8 +152,9 @@ public class Beehive {
      * toString returns a summary of the hive.
      */
     public String toString() { 
-        return "Beehive type of bee: " + beeType.get(0) + " number of bees in hive: "
-                + bees.size() + " amount of food in hive: " + this.food + " number of rooms: "
+        return "Beehive type of bee: " + beeType + "\n" + " number of bees in hive: "
+                + bees.size() + "\n" + " amount of food in hive: " + this.food + "\n"
+                + " number of rooms: "
                 + this.room + "\n";
     }
 

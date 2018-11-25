@@ -23,8 +23,6 @@ public class Apiary {
      * Apiary - constructor.
      */
     private Apiary() {
-        System.out.println("apiary singleton"); //TODO remove
-
     }
 
     /**
@@ -51,11 +49,12 @@ public class Apiary {
         HiveBuilder hb = new HiveBuilder();
         hb.setBeeType(type);
         hb.setFood(food);
-        Beehive bh = hb.builder();
-        this.beehive.add(bh);
+        Beehive bh = new Beehive();
+        bh = hb.builder();
+        this.beehive.add(hb.builder());
         this.hiveCounter++;
     }
-    
+
     /**
      * getNumHives returns number of hives in apiary.
      * @return beehive.size() - returns size of list
@@ -65,12 +64,13 @@ public class Apiary {
     }
 
     /**
-     * Returns the beehive at given index
+     * Returns the beehive at given index.
      * @param x - int 
      * @return beehive - returs the beehive
      */
-    protected Beehive returnBeehive(int x) {  
-       return beehive.get(x);
+    public Beehive returnBeehive(int x) {  
+        return beehive.get(x);
     }
-
+    
+ 
 }

@@ -32,9 +32,8 @@ public class ApiaryTest {
     @Test
     public void numOfHives() {
         Apiary ap = Apiary.getInstance();
-        Beehive bh = new Beehive(null, 0);
         ap.addBeehive("warrior", 100);
-        assertEquals(ap.getNumHives(),1);
+        assertEquals(ap.getNumHives(), 1);
     }
 
 }

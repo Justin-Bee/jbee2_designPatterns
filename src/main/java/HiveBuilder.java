@@ -23,7 +23,7 @@ public class HiveBuilder {
     
     /**
      * setBeeType sets the type of bee.
-     * @param bType - String for the beetype
+     * @param beeType - String for the beetype
      */
     public void setBeeType(String beeType) {
         this.beeType = beeType;
