@@ -7,7 +7,7 @@ package main.java;
  * @version 1122/2018
  *
  */
-public class WorkerBee extends Bee{
+public class WorkerBee extends Bee {
     
     /**
      * default constructor for the worker bee.
