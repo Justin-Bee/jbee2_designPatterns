@@ -51,7 +51,7 @@ public class BeeHiveTest {
     @Test
     public void addRoomTest() {
         HiveBuilder hb = new HiveBuilder();
-        hb.setBeeType("warrior");
+        hb.setBeeType("harvester");
         hb.setFood(100);
         Beehive bh = hb.builder();
         bh.spawnBee();
@@ -66,7 +66,7 @@ public class BeeHiveTest {
     @Test
     public void harvestFoodTest() {
         HiveBuilder hb = new HiveBuilder();
-        hb.setBeeType("warrior");
+        hb.setBeeType("worker");
         hb.setFood(100);
         Beehive bh = hb.builder();
         bh.spawnBee();
